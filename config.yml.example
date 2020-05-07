@@ -1,0 +1,7 @@
+development:
+  password: xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  theme_id: "00000000000"
+  store: example-store.myshopify.com
+  directory: theme
+  ignores:
+    - themekit_ignores
