@@ -1,0 +1,6 @@
+config.yml
+node_modules
+.DS_Store
+theme/assets/*.css
+theme/assets/*.js
+theme/assets/*.txt

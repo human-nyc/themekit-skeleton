@@ -1,0 +1,42 @@
+{
+  "name": "human-themekit-boilerplate",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "styles": "sass styles/layout/:theme/assets/ styles/templates/:theme/assets/ --embed-source-map",
+    "watch_styles": "npm-watch styles",
+    "scripts": "webpack --mode=development --watch",
+    "start": "concurrently 'theme watch' 'yarn scripts' 'yarn watch_styles' 'theme open'",
+    "deploy": "yarn webpack --mode=production && yarn sass styles/layout/:theme/assets/ styles/templates/:theme/assets/ --no-source-map && theme deploy -e staging"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
+    "@shopify/theme-currency": "^3.0.3",
+    "@shopify/theme-images": "^3.0.3",
+    "babel-core": "6.26.3",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.1.0",
+    "npm-watch": "^0.6.0",
+    "sass": "^1.25.0",
+    "sass-loader": "^8.0.2",
+    "vue": "^2.6.11",
+    "vue-loader": "^15.9.0",
+    "vuex": "^3.1.3",
+    "webpack": "^5.0.0-beta.12",
+    "webpack-cli": "^3.3.11",
+    "@shopify/theme-addresses": "^3.0.3",
+    "querystring": "^0.2.0",
+    "smoothscroll-polyfill": "^0.4.4"
+
+  },
+  "watch": {
+    "styles": {
+      "patterns": [
+        "styles"
+      ],
+      "extensions": "scss",
+      "quiet": false
+    }
+  }
+}

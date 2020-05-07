@@ -1,0 +1,14 @@
+{% assign valid_liquid_templates = '404, article, blog, cart, collection, customers.activate_account, customers.account, customers.activate_account, customers.addresses, customers.login, customers.order, customers.register, customers.reset_password, gift_card, index, list-collections, page, password, product, search' | split: ", " %}
+
+{% for liquid_template in valid_liquid_templates %}
+  {% assign liquid_template_filename = liquid_template | append: '.css' %}
+
+  {% assign template_match = template | replace: '/', '.' %}
+
+  {%- if template_match == liquid_template -%}
+    {{ liquid_template_filename | asset_url | stylesheet_tag }}
+
+  {%- else -%}
+    <link rel="prefetch" href="{{ liquid_template_filename | asset_url }}" as="style">
+  {%- endif -%}
+{% endfor %}

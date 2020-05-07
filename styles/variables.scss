@@ -1,0 +1,23 @@
+:root {
+  // Left and right page gutter. Can be set using multiple @media breakpoints. Example:
+  @media (max-width: 767px) {
+    --gutter: 16px;
+  }
+
+  @media (min-width: 768px) {
+    --gutter: 0;
+  }
+
+  // Header height
+  @media (max-width: 767px) {
+    --header-height: 50px;
+  }
+
+  @media (min-width: 768px) {
+    --header-height: 100px;
+  }
+
+  // Transition durations
+  --fast: 400ms;
+  --slow: 800ms;
+}

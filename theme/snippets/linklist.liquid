@@ -1,0 +1,40 @@
+<nav class="{{class}} linklist">
+  {%- for parent_link in linklist.links -%}
+    <div
+      class="parent-link-wrapper"
+      data-levels={{parent_link.levels}}
+      {% if parent_link.url == '/cart' %}id="headerCartTrigger"{% endif %}
+    >
+      <a
+        {% if parent_link.url == '/cart' %}
+          v-cloak
+          @click.prevent="toggleMiniCart"
+        {% endif %}
+        class="parent-link {% if parent_link.active or parent_link.child_active %}active{% endif %}"
+        href="{{parent_link.url}}"
+        data-type="{{parent_link.type}}"
+      >{{parent_link.title}}{% if parent_link.url == '/cart' %} ${getCartCount}{% endif %}</a>
+      {%- if parent_link.links.size > 0 -%}
+        <div class="child-links">
+          {%- for child_link in parent_link.links -%}
+            <div class="child-link-wrapper">
+              <a
+                class="child-link {% if child_link.active or child_link.child_active %}active{% endif %}"
+                href="{{child_link.url}}"
+                data-levels={{child_link.levels}}
+                data-type="{{child_link.type}}"
+              >{{child_link.title}}</a>
+              {%- if child_link.links.size > 0 -%}
+                <div class="grandchild-links">
+                  {% for grandchild_link in child_link.links %}
+                    <a class="grandchild-link {% if grandchild_link.active %}active{% endif %}" href="{{grandchild_link.url}}" data-levels={{grandchild_link.levels}} data-type="{{grandchild_link.type}}">{{grandchild_link.title}}</a>
+                  {% endfor %}
+                </div>
+              {%- endif -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endfor -%}
+</nav>
