@@ -210,6 +210,11 @@
     readdirp "^2.2.1"
     upath "^1.1.1"
 
+"@shopify/theme-sections@^4.1.0":
+  version "4.1.0"
+  resolved "https://registry.yarnpkg.com/@shopify/theme-sections/-/theme-sections-4.1.0.tgz#19df63a5a41ec6c1c47a95932fb44371d6540244"
+  integrity sha512-vIHdlCjJDqI2x/5JNtjYYI8gxKBPpUsveStXJO4fCrEqgof8dau0n5JrNtP1JQ61ESJOvTpP3RQrhjXU1KEJoA==
+
 "@sindresorhus/is@^0.14.0":
   version "0.14.0"
   resolved "https://registry.yarnpkg.com/@sindresorhus/is/-/is-0.14.0.tgz#9fb3a3cf3132328151f353de4632e01e52102bea"
